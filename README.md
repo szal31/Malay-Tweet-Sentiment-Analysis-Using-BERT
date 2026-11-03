@@ -3,6 +3,7 @@
 Classifies Malaysian tweets (Malay, and Malay mixed with English) as **Negative**, **Neutral** or **Positive**.
 It compares a classic TF-IDF baseline with two fine-tuned transformers, all trained on a CPU laptop.
 
+**Live demo:** https://malay-tweet-sentiment-analysis.streamlit.app/  
 **Model on Hugging Face:** [szal31/malay-tweet-sentiment-bert](https://huggingface.co/szal31/malay-tweet-sentiment-bert)
 
 ![Model comparison](output/1_model_comparison.png)
