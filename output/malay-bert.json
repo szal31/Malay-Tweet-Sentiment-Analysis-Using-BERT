@@ -1,0 +1,21 @@
+{
+  "model": "mesolitica/bert-base-standard-bahasa-cased",
+  "params": {
+    "epochs_run": 4,
+    "best_epoch": 2,
+    "lr": 2e-05,
+    "batch": 8,
+    "max_len": 96,
+    "frozen_embeddings": true
+  },
+  "val_macro_f1_by_epoch": [
+    0.5279,
+    0.5568,
+    0.5433,
+    0.4961
+  ],
+  "val_macro_f1": 0.5568453329003433,
+  "test_macro_f1": 0.6274141159387061,
+  "test_accuracy": 0.66,
+  "train_minutes": 27.8
+}

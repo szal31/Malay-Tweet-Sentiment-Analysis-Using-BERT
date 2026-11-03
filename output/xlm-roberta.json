@@ -1,0 +1,22 @@
+{
+  "model": "FacebookAI/xlm-roberta-base",
+  "params": {
+    "epochs_run": 5,
+    "best_epoch": 3,
+    "lr": 2e-05,
+    "batch": 8,
+    "max_len": 96,
+    "frozen_embeddings": true
+  },
+  "val_macro_f1_by_epoch": [
+    0.3203,
+    0.5473,
+    0.56,
+    0.5331,
+    0.5478
+  ],
+  "val_macro_f1": 0.5599713464237,
+  "test_macro_f1": 0.6293721720929156,
+  "test_accuracy": 0.65,
+  "train_minutes": 34.8
+}

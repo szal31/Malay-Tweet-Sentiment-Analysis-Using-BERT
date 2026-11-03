@@ -1,0 +1,6 @@
+.venv/
+models/
+__pycache__/
+.gradio/
+output/*.log
+output/train.done

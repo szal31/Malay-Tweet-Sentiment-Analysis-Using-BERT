@@ -1,0 +1,9 @@
+{
+  "model": "TF-IDF + logistic regression",
+  "params": {
+    "C": 0.1
+  },
+  "val_macro_f1": 0.5328777145740863,
+  "test_macro_f1": 0.5762069811890737,
+  "test_accuracy": 0.59
+}
