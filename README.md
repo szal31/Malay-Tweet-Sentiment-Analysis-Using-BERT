@@ -1,4 +1,4 @@
-# Malay Tweet Sentiment Classifier
+# Malay Tweet Sentiment Analysis Using BERT
 
 Classifies Malaysian tweets (Malay, and Malay mixed with English) as **Negative**, **Neutral** or **Positive**.
 It compares a classic TF-IDF baseline with two fine-tuned transformers, all trained on a CPU laptop.
