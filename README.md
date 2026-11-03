@@ -3,6 +3,8 @@
 Classifies Malaysian tweets (Malay, and Malay mixed with English) as **Negative**, **Neutral** or **Positive**.
 It compares a classic TF-IDF baseline with two fine-tuned transformers, all trained on a CPU laptop.
 
+**Model on Hugging Face:** [szal31/malay-tweet-sentiment-bert](https://huggingface.co/szal31/malay-tweet-sentiment-bert)
+
 ![Model comparison](output/1_model_comparison.png)
 
 ## Results
@@ -50,7 +52,7 @@ training tweets, the data limits the score more than the model choice does.
 | 2 | `baseline.py` | TF-IDF on word 1–2 grams plus character 2–5 grams (to cope with slang spellings such as *tak*, *x*, *takde*), then logistic regression. The regularisation strength is chosen on validation. |
 | 3 | `finetune.py` | Fine-tunes a transformer with a plain PyTorch loop: AdamW, linear warm-up and decay, gradient clipping, and early stopping on validation macro-F1. The best epoch is saved and scored once on test. |
 | 4 | `compare.py` | Builds the results table and charts, picks the best transformer by **validation** score, and writes its errors. |
-| 5 | `app.py` | A Gradio web demo. It applies the same cleaning as training before predicting. |
+| 5 | `demo/streamlit_app.py`, `app.py` | Web demos (Streamlit for the hosted version, Gradio locally). Both apply the same cleaning as training before predicting. |
 
 **Running on a laptop without a GPU.** The first run used too much memory on a 12 GB laptop. Three changes fixed it:
 - **Freezing the word-embedding layer.** XLM-RoBERTa's 250,000-word table alone needs about 3 GB to train, and
@@ -73,11 +75,11 @@ python baseline.py
 python finetune.py malay-bert
 python finetune.py xlm-roberta
 python compare.py
-python app.py
+streamlit run demo/streamlit_app.py
 ```
 
-`app.py` opens the demo at http://127.0.0.1:7860. Set `MODEL_PATH` to use another model folder or a Hugging
-Face model id.
+The demo downloads the fine-tuned model from Hugging Face, so you can run it without training. Set `MODEL_PATH`
+to use a local model folder instead. `python app.py` runs the same demo in Gradio.
 
 ## Data
 

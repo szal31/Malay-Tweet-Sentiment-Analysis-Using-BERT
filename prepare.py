@@ -9,9 +9,6 @@ import html
 import re
 from pathlib import Path
 
-import pandas as pd
-from sklearn.model_selection import train_test_split
-
 ROOT = Path(__file__).parent
 LABELS = ["Negative", "Neutral", "Positive"]
 
@@ -25,6 +22,10 @@ def clean(text):
 
 
 def main():
+    # imported here so the web demo can use clean() without installing pandas and scikit-learn
+    import pandas as pd
+    from sklearn.model_selection import train_test_split
+
     d = pd.read_parquet(ROOT / "data" / "tweets.parquet").dropna(subset=["labels"])
     d = d.rename(columns={"texts": "text", "labels": "label"})
     d["text"] = d["text"].map(clean)

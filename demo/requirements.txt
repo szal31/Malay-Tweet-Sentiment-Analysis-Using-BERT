@@ -1,0 +1,5 @@
+# Streamlit Cloud reads this file (next to streamlit_app.py). CPU-only torch keeps the app under the 1 GB limit.
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch
+transformers==5.22.1
+streamlit
